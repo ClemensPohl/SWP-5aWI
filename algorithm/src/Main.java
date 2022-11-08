@@ -1,5 +1,15 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        // Sorting Algorithm:
+        int[] numbersList = Datatypes.GenerateArray(10);
+        SortingAlgorithm.sortArray(numbersList);
+        Datatypes.PrintArray(numbersList);
+
+
+
+
     }
 }
