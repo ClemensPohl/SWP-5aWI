@@ -1,46 +1,89 @@
-public class Car {
+import java.util.ArrayList;
+import java.util.List;
 
-    private int fuelAmount;
-    private int fuelConsumption;
+public class Car {
     private String brand;
     private String serialNumber;
     private String color;
-    public Car (int fuelAmount, int fuelConsumption, String brand, String serialNumber, String color){
+    private Engine engine;
+    private Tank tank;
+    private List<rearMirror> rearMirrors;
+    private List<Tire> tires;
 
-        this.fuelAmount = fuelAmount;
-        this.fuelConsumption = fuelConsumption;
+
+    public Car(String brand, String serialNumber, String color, Tank tank, Engine engine) {
         this.brand = brand;
         this.serialNumber = serialNumber;
         this.color = color;
+        this.tank = tank;
+        this.engine = engine;
+        this.rearMirrors = new ArrayList<>();
+        this.tires = new ArrayList<>();
+    }
+    public String getBrand() {
+        return brand;
     }
 
-    public void drive(){
-        this.fuelAmount = this.fuelAmount - this.fuelConsumption;
-        System.out.println("Driving the car");
+    public String getSerialNumber() {
+        return serialNumber;
     }
 
-    public void breaking(){
-        System.out.println("I am breaking");
+    public String getColor() {
+        return color;
     }
 
-    public void turboBoost(){
-        if(fuelAmount < fuelAmount * 0.1 ){
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public Tank getTank() {
+        return tank;
+    }
+
+    public void setTank(Tank tank) {
+        this.tank = tank;
+    }
+
+
+    public void addTires(Tire tire){
+        this.tires.add(tire);
+    }
+
+    public List<Tire> getTires(){
+        return tires;
+    }
+
+    public void addMirror(rearMirror rearMirror){
+        this.rearMirrors.add(rearMirror);
+    }
+    public List<rearMirror> getRearMirrors() {
+        return rearMirrors;
+    }
+
+    public void brake() {
+        System.out.println("Breaking");
+    }
+
+    public void turboBoost() {
+        if (this.tank.getCurrentFuelAmount() > (this.tank.getCurrentFuelAmount() * 0.1)) {
             System.out.println("SuperBoostMode");
-        }else{
-            System.out.println("Not enough fuel to go to Superboost");
+        } else {
+            System.out.println("Not enough fuel for Superboost");
         }
     }
 
-    public void honk(int amountOfRepetitions){
+    public void honk(int amountOfRepetitions) {
         for (int i = 0; i < amountOfRepetitions; i++) {
-            System.out.println("Tuuut" + "Amount: " + i);
+            System.out.println("Tuuuuuuuuuuuuuuuuuuuuuuuuuuuuutt!!!!");
+
         }
     }
 
-    public void getRemainingRange(){
-        int x = fuelAmount / fuelConsumption;
-        System.out.println(x + " Units remaining");
+    public void honk(){
+        System.out.println("Brand: " + this.brand + " Color: " + this.color + "Horsepower: " + this.getEngine().getHorsePower() + " ps");
     }
 
-
+    public void getRemainingRange() {
+        System.out.println((this.tank.getCurrentFuelAmount() / this.engine.getFuelConsumption()) * 100 + " remaining range");
+    }
 }
