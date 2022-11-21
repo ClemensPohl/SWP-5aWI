@@ -23,10 +23,8 @@ public class Main {
         c1.addTires(tire3);
         c1.addTires(tire4);
         c1.honk();
-        System.out.println(c1.getRearMirrors().get(0).getPosition());
-        System.out.println(c1.getTires().get(0).getRadius());
-
-
+        System.out.println(c1.getRearMirrors().get(1).getPosition());
+        System.out.println(c1.getTires().get(2).getRadius());
 
 
     }

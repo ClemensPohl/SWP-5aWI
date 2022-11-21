@@ -1,5 +1,3 @@
-
-
 public class Tire {
     private String brand;
     private int radius;
