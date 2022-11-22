@@ -23,8 +23,6 @@ public class Remote {
         for (int i = 0; i < this.battery.size(); i++) {
             this.battery.get(i).setChargingStatus(this.battery.get(i).getChargingStatus() - 5);
         }
-
-
     }
 
     public void TurnOff(){
@@ -32,7 +30,11 @@ public class Remote {
     }
 
     public void getStatus(){
-
+        int x = 0;
+        for (int i = 0; i < this.battery.size(); i++) {
+        x += this.battery.get(i).getChargingStatus();
+        }
+        System.out.println("Mittelwert ist: " + x / this.battery.size() + "%");
     }
 
 
