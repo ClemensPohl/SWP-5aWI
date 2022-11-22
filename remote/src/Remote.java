@@ -36,7 +36,4 @@ public class Remote {
         }
         System.out.println("Mittelwert ist: " + x / this.battery.size() + "%");
     }
-
-
-
 }
