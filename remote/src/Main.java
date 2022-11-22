@@ -9,6 +9,7 @@ public class Main {
 
         remote.TurnOn();
         remote.TurnOff();
+        remote.getStatus();
 
     }
 }
