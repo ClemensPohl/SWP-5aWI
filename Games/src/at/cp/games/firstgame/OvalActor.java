@@ -1,10 +1,9 @@
 package at.cp.games.firstgame;
 
-import org.newdawn.slick.Game;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-public class CircleActor implements Actor{
+public class OvalActor implements Actor{
     private double x,y;
     private direction dirs;
     public enum direction{
@@ -14,7 +13,7 @@ public class CircleActor implements Actor{
         down
     }
 
-    public CircleActor(double x, double y, direction dirs) {
+    public OvalActor(double x, double y, direction dirs) {
         super();
         this.x = x;
         this.y = y;
@@ -34,6 +33,6 @@ public class CircleActor implements Actor{
     }
 
     public void render(Graphics graphics){
-        graphics.drawOval((float) this.x,(float) this.y, 20,20);
+        graphics.drawOval((float) this.x,(float) this.y, 20,80);
     }
 }
